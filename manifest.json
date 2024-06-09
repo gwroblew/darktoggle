@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "Dark Toggle",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "toggle-dark-mode": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "windows": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y",
+        "chromeos": "Ctrl+Shift+Y",
+        "linux": "Ctrl+Shift+Y"
+      },
+      "description": "Toggle Dark Mode"
+    },
+    "toggle-grayscale": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+H",
+        "windows": "Ctrl+Shift+H",
+        "mac": "Command+Shift+H",
+        "chromeos": "Ctrl+Shift+H",
+        "linux": "Ctrl+Shift+H"
+      },
+      "description": "Toggle Grayscale"
+    }
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "512": "images/icon-512.png",
+      "128": "images/icon-128.png",
+      "48": "images/icon-48.png",
+      "32": "images/icon-32.png",
+      "16": "images/icon-16.png"
+    }
+  },
+  "icons": {
+    "512": "images/icon-512.png",
+    "128": "images/icon-128.png",
+    "48": "images/icon-48.png",
+    "32": "images/icon-32.png",
+    "16": "images/icon-16.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}

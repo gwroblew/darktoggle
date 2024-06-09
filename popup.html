@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Options</title>
+    <style>
+        body {
+            width: 300px;
+            background-color: #333;
+            color: #ccc;
+            padding: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        #sections {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        section {
+            margin-right: 10px;
+        }
+
+        #header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+    <script src="popup.js" defer></script>
+</head>
+
+<body>
+    <div id="header-container">
+        <h1 style="margin: 0px; padding: 0px;">Dark Mode Options</h1>
+        <p style="margin-bottom: 0px; padding-bottom: 0px;">Dark Mode Toggle: Ctrl + Shift + Y</p>
+        <p style="margin-bottom: 0px; padding-bottom: 0px;">Grayscale Toggle: Ctrl + Shift + H</p>
+    </div>
+    <div id="sections">
+        <section>
+            <h2>Site</h2>
+            <input type="checkbox" id="darkmode-checkbox" name="darkmode">
+            <label for="darkmode-checkbox">Dark Mode</label><br>
+            <input type="checkbox" id="grayscale-checkbox" name="grayscale">
+            <label for="grayscale-checkbox">Grayscale</label><br>
+            <input type="checkbox" id="forcedmode-checkbox" name="forcedmode">
+            <label for="forcedmode-checkbox">Forced Mode</label><br>
+            <input type="checkbox" id="skipiframes-checkbox" name="skipiframes">
+            <label for="skipiframes-checkbox">Skip IFrames</label><br>
+            <p>Delay:
+                <select id="delay-select">
+                    <option value="0">none</option>
+                    <option value="0.2">0.2 second</option>
+                    <option value="0.5">0.5 second</option>
+                    <option value="1">1 second</option>
+                    <option value="2">2 seconds</option>
+                </select>
+            </p>
+            <p>Brightness:
+                <select id="brightness-select">
+                    <option value="0.6">60%</option>
+                    <option value="0.8">80%</option>
+                    <option value="1.0">100%</option>
+                    <option value="1.2">120%</option>
+                    <option value="1.4">140%</option>
+                </select>
+            </p>
+            <p>Contrast:
+                <select id="contrast-select">
+                    <option value="0.6">60%</option>
+                    <option value="0.8">80%</option>
+                    <option value="1.0">100%</option>
+                    <option value="1.2">120%</option>
+                    <option value="1.4">140%</option>
+                </select>
+            </p>
+        </section>
+        <section>
+            <h2>Defaults</h2>
+            <input type="checkbox" id="default-darkmode-checkbox" name="darkmode">
+            <label for="default-darkmode-checkbox">Dark Mode</label><br>
+            <input type="checkbox" id="default-grayscale-checkbox" name="grayscale">
+            <label for="default-grayscale-checkbox">Grayscale</label>
+            <br><br><br><br><br>
+            <p id="dark-mode-status">Dark Mode is <b><span id="status-indicator">OFF</span></b></p>
+        </section>
+    </div>
+</body>
+
+</html>
